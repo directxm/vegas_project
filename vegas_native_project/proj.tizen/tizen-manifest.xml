@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="vegaslife" version="1.0.0">
+    <ui-application appid="vegaslife" exec="hellocpp" multiple="false" nodisplay="false" taskmanage="true" type="capp">
+        <label>vegas_native_project</label>
+        <icon>vegas_native_project.png</icon>
+    </ui-application>
+</manifest>
