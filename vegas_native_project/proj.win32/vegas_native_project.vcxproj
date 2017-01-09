@@ -149,6 +149,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\CityScene.cpp" />
     <ClCompile Include="..\Classes\CocosBuilderLayer.cpp" />
     <ClCompile Include="..\Classes\component\DigitalScrollLable.cpp" />
+    <ClCompile Include="..\Classes\component\ModalLayer.cpp" />
     <ClCompile Include="..\Classes\component\NoticeLable.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="..\Classes\LauncherScene.cpp" />
@@ -161,6 +162,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\TestScene.cpp" />
     <ClCompile Include="..\Classes\utils\OsUtils.cpp" />
     <ClCompile Include="..\Classes\utils\StringUtils.cpp" />
+    <ClCompile Include="..\Classes\utils\Cocos2DUtils.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +172,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\CocosBuilderLayer.h" />
     <ClInclude Include="..\Classes\CocosBuilderLayerLoader.h" />
     <ClInclude Include="..\Classes\component\DigitalScrollLable.h" />
+    <ClInclude Include="..\Classes\component\ModalLayer.h" />
     <ClInclude Include="..\Classes\component\NoticeLable.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="..\Classes\LauncherScene.h" />
@@ -183,6 +186,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\TestScene.h" />
     <ClInclude Include="..\Classes\utils\OsUtils.h" />
     <ClInclude Include="..\Classes\utils\StringUtils.h" />
+    <ClInclude Include="..\Classes\utils\Cocos2DUtils.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

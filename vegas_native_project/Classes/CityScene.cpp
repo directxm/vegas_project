@@ -25,15 +25,53 @@ CityScene::CityScene()
 // on "init" you need to initialize your instance
 bool CityScene::init()
 {
+	bool ret = false;
+
 	//////////////////////////////
 	// 1. super init first
-	if (!Layer::init())
+	if (Layer::init())
 	{
-		return false;
+		if (citySocket != nullptr)
+		{
+			citySocket->close();
+			citySocket = nullptr;
+		}
+
+		// HTTP ÇëÇóurl
+		citySocket = new cocos2d::network::WebSocket();
+		citySocket->init(*this, "ws://localhost/city");
+
+
+		ret = true;
 	}
 
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 
+	return ret;
+}
+
+void CityScene::onOpen(cocos2d::network::WebSocket* ws)
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void CityScene::onMessage(cocos2d::network::WebSocket* ws, const cocos2d::network::WebSocket::Data& data)
+{
+	if (!data.isBinary)
+	{
+	}
+
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void CityScene::onClose(cocos2d::network::WebSocket* ws)
+{
+	throw std::logic_error("The method or operation is not implemented.");
+}
+
+void CityScene::onError(cocos2d::network::WebSocket* ws, const cocos2d::network::WebSocket::ErrorCode& error)
+{
+	throw std::logic_error("The method or operation is not implemented.");
 }
