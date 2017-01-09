@@ -28,6 +28,9 @@
     <Filter Include="src\utils">
       <UniqueIdentifier>{50b3d4f9-1835-4401-bbe8-bc8c297155da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\network">
+      <UniqueIdentifier>{50362393-a764-4a7f-8cfe-3804481b4fe1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
