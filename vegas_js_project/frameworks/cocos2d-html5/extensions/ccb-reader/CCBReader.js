@@ -270,6 +270,7 @@ cc.BuilderReader = cc.Class.extend({
         var locAnimationManager = this._animationManager;
         locAnimationManager.setRootContainerSize(parentSize);
         locAnimationManager.setOwner(owner);
+        locAnimationManager.setDelegate(owner);
 
         this._ownerOutletNames = [];
         this._ownerOutletNodes = [];
@@ -1030,7 +1031,7 @@ cc.BuilderReader.load = function (ccbFilePath, owner, parentSize, ccbRootPath) {
         var controllerClass = controllerClassCache[controllerName];
         if(!controllerClass) throw new Error("Can not find controller : " + controllerName);
         var controller = new controllerClass();
-        controller.controllerName = controllerName;
+        controller.controllerName = owner;//controllerName;
 
         innerNode.controller = controller;
         controller.rootNode = innerNode;
@@ -1060,7 +1061,7 @@ cc.BuilderReader.load = function (ccbFilePath, owner, parentSize, ccbRootPath) {
         }
 
         if (controller.onDidLoadFromCCB && cc.isFunction(controller.onDidLoadFromCCB))
-            controller.onDidLoadFromCCB();
+            controller.onDidLoadFromCCB(controller.controllerName);
 
         // Setup timeline callbacks
         var keyframeCallbacks = animationManager.getKeyframeCallbacks();
