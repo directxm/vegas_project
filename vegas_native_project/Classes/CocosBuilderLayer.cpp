@@ -49,7 +49,12 @@ cocos2d::extension::Control::Handler CocosBuilderLayer::onResolveCCBCCControlSel
 	return nullptr;
 }
 
-bool CocosBuilderLayer::onAssignCCBMemberVariable(cocos2d::Ref * pTarget, const char * pMemberVariableName, cocos2d::Node * node)
+cocos2d::SEL_CallFuncN CocosBuilderLayer::onResolveCCBCCCallFuncSelector(cocos2d::Ref * pTarget, const char* pSelectorName)
+{
+	return nullptr;
+}
+
+bool CocosBuilderLayer::onAssignCCBMemberVariable(cocos2d::Ref * pTarget, const char * pMemberVariableName, cocos2d::Node * pNode)
 {
 	//CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBurstSprite", Sprite *, this->mBurstSprite);
 

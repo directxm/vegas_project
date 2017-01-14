@@ -148,6 +148,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\CityScene.cpp" />
     <ClCompile Include="..\Classes\CocosBuilderLayer.cpp" />
+    <ClCompile Include="..\Classes\component\AniNode.cpp" />
     <ClCompile Include="..\Classes\component\DigitalScrollLable.cpp" />
     <ClCompile Include="..\Classes\component\ModalLayer.cpp" />
     <ClCompile Include="..\Classes\component\NoticeLable.cpp" />
@@ -171,6 +172,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\CityScene.h" />
     <ClInclude Include="..\Classes\CocosBuilderLayer.h" />
     <ClInclude Include="..\Classes\CocosBuilderLayerLoader.h" />
+    <ClInclude Include="..\Classes\component\AniNode.h" />
     <ClInclude Include="..\Classes\component\DigitalScrollLable.h" />
     <ClInclude Include="..\Classes\component\ModalLayer.h" />
     <ClInclude Include="..\Classes\component\NoticeLable.h" />

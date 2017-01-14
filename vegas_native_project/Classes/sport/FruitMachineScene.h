@@ -59,6 +59,7 @@ public:
 		Puzzle,
 		Prize,
 	};
+
 public:
 	static cocos2d::Scene* createScene();
 
@@ -95,13 +96,17 @@ protected:
 	void onPrize();
 
 protected:
+	bool onAssignCCBMemberVariable(cocos2d::Ref * pTarget, const char * pMemberVariableName, cocos2d::Node * pNode) override;
+	bool onAssignCCBCustomProperty(cocos2d::Ref* pTarget, const char* pMemberVariableName, const cocos2d::Value& pCCBValue) override;
+
+	void touchDownBeting(cocos2d::Ref* sender, cocos2d::extension::Control::EventType controlEvent);
+protected:
 	//cocos2d::Vector<cocos2d::Sprite*> _slots;
 	std::vector<cocos2d::Sprite*> _slots;
 	std::vector<SlotType> _slotTypes; // 左上角为起点
 	std::vector<cocos2d::Sprite*> _focusSlots;
 	//cocos2d::Sprite* _focusSlot;
-	std::vector<int> _slotBettingValues;
-	std::vector<int> _slotTotalBettingValues;
+	std::vector<cocos2d::extension::ControlButton*> _bettingButtons;
 
 	// 倒计时板
 	cocos2d::LabelAtlas* _lotteryCountDownLabel;
@@ -110,6 +115,9 @@ protected:
 	int _mid; // machine id
 	int _rewardValue;
 	GameStatus _status;
+
+	std::vector<int> _slotBettingValues;
+	std::vector<int> _slotTotalBettingValues;
 
 	SlotType _sourceSlot;
 	SlotType _targetSlot; // prize
@@ -120,6 +128,9 @@ protected:
 
 	int _countDownTime;
 	NoticeLable* _noticeLable;
+
+
+	// fake value
 private:
 };
 

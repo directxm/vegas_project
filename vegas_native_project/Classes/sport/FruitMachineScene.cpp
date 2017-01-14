@@ -2,6 +2,11 @@
 #include "CocosBuilderLayerLoader.h"
 
 USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace cocosbuilder;
+
+static int MAX_SLOT = 10;
+static int MAX_BET = 10;
 
 FruitMachineLayer::FruitMachineLayer()
 {
@@ -187,4 +192,50 @@ void FruitMachineLayer::onPuzzle()
 void FruitMachineLayer::onPrize()
 {
 	drawPrize();
+}
+
+bool FruitMachineLayer::onAssignCCBMemberVariable(cocos2d::Ref * pTarget, const char * pMemberVariableName, cocos2d::Node * pNode)
+{
+	CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "lotteryCountDownLabel", LabelAtlas*, this->_lotteryCountDownLabel);
+	CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "puzzleCountDownLabel", LabelAtlas*, this->_puzzleCountDownLabel);
+
+	// slots
+	for (int i = 0; i < _slotTypes.size(); ++i)
+	{
+		Sprite* tmp = nullptr;
+		CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "slot_" + i, Sprite*, tmp);
+		_slots.push_back(tmp);
+	}
+
+	for (int i = 0; i < _slotTypes.size(); ++i)
+	{
+		Sprite* tmp = nullptr;
+		CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "focus_" + i, Sprite*, tmp);
+		_focusSlots.push_back(tmp);
+	}
+
+	// betting button
+	for (int i = 0; i < _slotTypes.size(); ++i)
+	{
+		ControlButton* tmp = nullptr;
+		CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "betting_" + i, ControlButton*, tmp);
+		_bettingButtons.push_back(tmp);
+	}
+	
+
+
+	return true;
+}
+
+bool FruitMachineLayer::onAssignCCBCustomProperty(cocos2d::Ref* pTarget, const char* pMemberVariableName, const cocos2d::Value& pCCBValue)
+{
+	return true;
+}
+
+void FruitMachineLayer::touchDownBeting(cocos2d::Ref* sender, cocos2d::extension::Control::EventType controlEvent)
+{
+	if (canBet())
+	{
+		// do something
+	}
 }

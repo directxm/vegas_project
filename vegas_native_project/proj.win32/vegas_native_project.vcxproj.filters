@@ -93,6 +93,9 @@
     <ClCompile Include="..\Classes\utils\Cocos2DUtils.cpp">
       <Filter>src\utils</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\component\AniNode.cpp">
+      <Filter>src\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\utils\Cocos2DUtils.h">
       <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\component\AniNode.h">
+      <Filter>src\component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
