@@ -1,5 +1,6 @@
 var res = {
     HelloWorld_png : "res/HelloWorld.png",
+    Test_ccbi : "res/ccbi/Published-HTML5/MainScene.ccbi",
 };
 
 var g_resources = [];
