@@ -9,14 +9,17 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d", "extensions", "socketio"],
+    "modules" : ["cocos2d", "extensions", "socketio", "external"],
 
     "jsList" : [
         "src/resource.js",
         "src/app.js",
         "src/ccb_test.js",
         "src/net_test.js",
-        "src/third_part/atmosphere/atmosphere.js"
+        "src/third_part/atmosphere/atmosphere.js",
+        "src/x_test.js",
+        "src/ccb2_test.js",
+        "src/boot2-html5.js"
 
 
     ]
